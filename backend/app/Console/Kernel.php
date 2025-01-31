@@ -22,7 +22,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // Exemplo: Agendar o Job de sincronização diária
         $schedule->job(new \App\Jobs\SyncDataFromAPI)->daily();
     }
 }

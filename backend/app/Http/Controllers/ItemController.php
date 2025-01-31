@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Item;
 use Illuminate\Http\Request;
 
-class ItemController extends Controller
+class ItemController
 {
     public function index(Request $request)
     {
