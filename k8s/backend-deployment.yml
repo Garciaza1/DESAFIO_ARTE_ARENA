@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: localhost/backend-backend:latest  # Use a imagem correta, conforme seu docker-compose
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8000  # Porta correta
+        env:
+        - name: DB_HOST
+          value: "mysql-service"  # Nome do serviço do MySQL
+        - name: DB_PORT
+          value: "3306"
+        - name: DB_USERNAME
+          value: "root"
+        - name: DB_PASSWORD
+          value: "rootpassword"
+        - name: DB_DATABASE
+          value: "laravel"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  selector:
+    app: backend
+  ports:
+    - protocol: TCP
+      port: 8000  # Porta do backend Laravel
+      targetPort: 8000  # Porta de destino no container
+  type: ClusterIP

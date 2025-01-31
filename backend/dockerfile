@@ -1,0 +1,42 @@
+# Usar uma imagem base do PHP com Apache
+FROM php:8.2-apache
+
+# Instalar as extensões necessárias do PHP
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    zip \
+    git \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd pdo pdo_mysql
+
+# Habilitar mod_rewrite do Apache (necessário para o Laravel)
+RUN a2enmod rewrite
+
+# Definir o diretório de trabalho dentro do container
+WORKDIR /var/www/html
+
+# Copiar os arquivos do Laravel para o diretório de trabalho
+COPY . .
+
+# Instalar as dependências do Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Rodar o Composer para instalar as dependências do Laravel
+RUN composer install --no-dev --optimize-autoloader
+
+# Definir as permissões corretas para o Laravel
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Copiar o script start.sh para o contêiner
+COPY start.sh /usr/local/bin/start.sh
+
+# Tornar o script executável
+RUN chmod +x /usr/local/bin/start.sh
+
+# Usar o script para iniciar o Apache
+ENTRYPOINT ["sh", "/usr/local/bin/start.sh"]
+
+# Expor a porta 8000
+EXPOSE 8000
