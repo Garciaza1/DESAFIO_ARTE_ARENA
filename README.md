@@ -192,7 +192,7 @@ Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de
 ### Frontend Rodando
 ![Captura de Tela (23)](https://github.com/user-attachments/assets/a1f83dc0-930d-4265-ba41-13c1e57c6f37)
 
-### Funionalidade de adição funcionalndo no frontend 
+### Funionalidade de adição funcionando no frontend 
 ![Captura de Tela (22)](https://github.com/user-attachments/assets/457a948e-b9e6-4523-9ca2-158e8fe656e2)
 
 ### Retorno Da API Backend
