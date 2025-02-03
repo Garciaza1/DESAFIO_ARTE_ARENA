@@ -197,3 +197,6 @@ Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de
 
 ### Retorno Da API Backend
 ![Captura de Tela (21)](https://github.com/user-attachments/assets/146e512a-0851-443d-8be8-5d2195a07d1b)
+
+### Documentação Sphinx
+![Captura de Tela (33)](https://github.com/user-attachments/assets/84b4ba6d-c287-425e-8b50-8fd650b9d14c)
