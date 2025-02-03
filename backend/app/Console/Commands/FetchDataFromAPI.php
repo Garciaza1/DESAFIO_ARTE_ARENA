@@ -15,8 +15,9 @@ class FetchDataFromAPI extends Command
 
     public function handle()
     {
-        // $client = new Client();
-        // $request = $client->request('GET','https://jsonplaceholder.typicode.com/posts', ['verify' => false]);
+        // com verificação
+        // $request = $client->request('GET','https://jsonplaceholder.typicode.com/posts', ['verify' => false]);   
+        // sem verificação:
         $response = Http::withoutVerifying()->get('https://jsonplaceholder.typicode.com/posts');
         $data = $response->json();
 

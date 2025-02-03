@@ -7,7 +7,6 @@ use App\Models\Item;
 use App\Jobs\SyncDataFromAPI;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Queue;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class SyncDataFromAPITest extends TestCase
