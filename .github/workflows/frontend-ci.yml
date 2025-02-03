@@ -1,0 +1,43 @@
+name: Frontend CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout do código
+      uses: actions/checkout@v3
+
+    - name: 📦 Instalar Node.js e dependências
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: 📦 Instalar dependências do Next.js
+      run: |
+        cd frontend
+        npm install
+
+    - name: 🏗 Build do frontend
+      run: |
+        cd frontend
+        npm run build
+
+    - name: 🐳 Build da imagem Docker
+      run: |
+        docker build -t ghcr.io/${{ github.repository }}/frontend:latest frontend
+
+    - name: 🔐 Login no GitHub Container Registry
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
+
+    - name: 📤 Push da imagem para o GHCR
+      run: |
+        docker push ghcr.io/${{ github.repository }}/frontend:latest
