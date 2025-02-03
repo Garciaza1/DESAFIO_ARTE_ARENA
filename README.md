@@ -171,14 +171,29 @@ Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de
 
 ## Screenshots
 
-![Captura de Tela (31)](https://github.com/user-attachments/assets/6d0795a6-4b18-4eb6-b316-bca5ea6fad86)
+###Kubernetes Rodando no docker desktop
 ![Captura de Tela (30)](https://github.com/user-attachments/assets/d1aa33bd-c08b-4808-913f-dae959c150e1)
+
+###Containeres kuberntes e locais rodando ao mesmo tempo
 ![Captura de Tela (29)](https://github.com/user-attachments/assets/89c8cc00-002a-4a75-9c45-c60b211edd0a)
+
+###Frontend rodando em Kuberntes
 ![Captura de Tela (28)](https://github.com/user-attachments/assets/d67ee17c-9ffe-4df9-afa9-0c7e94b63069)
+
+###Containeres docker rodando localmente front e backend
 ![Captura de Tela (27)](https://github.com/user-attachments/assets/6e9ea747-8053-4785-8ed3-5234e0e2973e)
+
+###Testes Unitarios Laravel
 ![Captura de Tela (26)](https://github.com/user-attachments/assets/a2ccf7d6-5c15-44c2-abc4-73e0d75a8571)
-![Captura de Tela (25)](https://github.com/user-attachments/assets/34dfa802-9fc6-4670-ae1c-f53a1cf7a7ed)
+
+###Testes Unitarios no Frontend
 ![Captura de Tela (24)](https://github.com/user-attachments/assets/17864567-f41b-4ecd-9a09-fcf2d13b4dca)
+
+###Frontend Rodando
 ![Captura de Tela (23)](https://github.com/user-attachments/assets/a1f83dc0-930d-4265-ba41-13c1e57c6f37)
+
+###Funionalidade de adição funcionalndo no frontend 
 ![Captura de Tela (22)](https://github.com/user-attachments/assets/457a948e-b9e6-4523-9ca2-158e8fe656e2)
+
+###Retorno Da API Backend
 ![Captura de Tela (21)](https://github.com/user-attachments/assets/146e512a-0851-443d-8be8-5d2195a07d1b)
